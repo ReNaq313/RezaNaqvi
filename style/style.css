@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+:root {
+   --background-purple: #512D6D;
+   --color-light-purple: #664E88;
+   --color-medium-purple: #400969;
+   --color-dark-purple: #310553;
+   --text-color-green: rgb(62, 204, 62);
+   --text-color-gray: #F3F1F5;
+   --text-color-yellow: #FFC947;
+   --text-color-pink: #FF449F;
+   --underline-yellow: 3px solid var(--text-color-yellow);
+   --underline-gray: 2px solid rgb(32, 32, 32);
+}
+
+body {
+   font-family: 'Roboto Mono', sans-serif;
+   background: var(--background-purple);
+   color: var(--text-color-gray);
+   font-size: 18px;
+   line-height: 1.8;
+   overflow: hidden;
+}
+
+p::selection, li::selection, a::selection, span::selection, h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection {
+   background-color: white;
+   color: var(--background-purple);
+   /* text-shadow: 0 0 15px var(--color-dark-purple); */
+}
+
+a:any-link {
+   text-decoration: none;
+   color: var(--text-color-gray);
+}
+
+.cursor {
+   color: var(--text-color-yellow);
+}
+
+.pink-color {
+   color: var(--text-color-pink);
+}
+
+header {
+   background-color: var(--background-purple);
+   margin-bottom: 4rem;
+   position: sticky;
+   top: 0;
+}
+
+.header-shadow {
+   box-shadow: 0 0 2.5rem rgba(255, 255, 255, 0.274);
+}
+
+.nav {
+   position: relative;
+}
+
+.nav::after {
+   content: '';
+   width: 100%;
+   height: .1rem;
+   background-color: rgba(26, 26, 26, 0.4);
+   position: absolute;
+   left: 0;
+   bottom: -.2rem;
+}
+
+.nav-item {
+   display: inline-block;
+   font-size: 1.5rem;
+   padding: 8px 8px;
+   margin-right: 1rem;
+   cursor: pointer;
+   text-align: center;
+   position: relative;
+   transition: all .2s;
+}
+
+.nav-item:last-child {
+   position: absolute;
+   padding: 8px;
+   right: 0;
+}
+
+.nav-item:last-child::after {
+   content: '';
+   width: .07rem;
+   height: 120%;
+   background-color: rgba(26, 26, 26, 0.4);
+   z-index: -2;
+   position: absolute;
+   left: -.6rem;
+   bottom: -.1rem;
+}
+
+.nav-item::after {
+   content: '';
+   width: .07rem;
+   height: 120%;
+   background-color: rgba(26, 26, 26, 0.459);
+   z-index: -2;
+   position: absolute;
+   right: -.6rem;
+   bottom: -.1rem;
+}
+
+/* tippy tooltip css */
+
+.tippy-box {
+   background-color: var(--text-color-pink);
+   color: var(--color-dark-purple);
+   font-size: 1.3rem;
+}
+
+.tippy-box[data-placement^='top']>.tippy-arrow::before {
+   border-top-color: var(--text-color-pink);
+}
+
+.tippy-box[data-placement^='bottom']>.tippy-arrow::before {
+   border-bottom-color: var(--text-color-pink);
+}
+
+.tippy-box[data-placement^='left']>.tippy-arrow::before {
+   border-left-color: var(--text-color-pink);
+}
+
+.tippy-box[data-placement^='right']>.tippy-arrow::before {
+   border-right-color: var(--text-color-pink);
+}
+
+.tippy-box>.tippy-arrow::before {
+   transform: scale(1.6);
+}
+
+.theme-tab {
+   position: relative;
+}
+
+.theme-tab:hover {
+   color: var(--color-medium-purple);
+}
+
+.theme-tab:active {
+   font-weight: bold;
+   color: var(--color-dark-purple);
+}
+
+.theme-tab::before {
+   content: '';
+   width: 40%;
+   height: 100%;
+   background: var(--text-color-pink);
+   position: absolute;
+   bottom: .1rem;
+   left: 0%;
+   z-index: -1;
+   opacity: 0;
+   transition: all .5s;
+}
+
+.theme-tab:hover::before {
+   background: var(--text-color-yellow);
+   left: -4%;
+   opacity: 1;
+   bottom: .1rem;
+   width: 120%;
+}
+
+h1 {
+   color: var(--text-color-green);
+   font-size: 3.1rem;
+   letter-spacing: -4px;
+   word-spacing: -15px;
+   margin-bottom: 20px;
+}
+
+h2 {
+   display: inline-block;
+   position: relative;
+}
+
+/* START underline fading effect */
+
+h2::after {
+   content: '';
+   width: 40%;
+   height: 4px;
+   background: var(--text-color-pink);
+   position: absolute;
+   bottom: .1rem;
+   left: 30%;
+   z-index: -1;
+   opacity: 0;
+   transition: all .5s;
+}
+
+h2:hover::after {
+   background: var(--text-color-yellow);
+   left: 0%;
+   opacity: 1;
+   bottom: .1rem;
+   width: 100%;
+}
+
+/*  END underline fading effect   */
+
+.secondary-heading {
+   color: var(--text-color-green);
+}
+
+.active-tab {
+   position: relative;
+   margin-right: 2.5rem;
+   padding: 8px 13px;
+}
+
+.active-tab::before {
+   content: 'x';
+   font-size: 1.8rem;
+   position: absolute;
+   bottom: 11%;
+   right: -1.7rem;
+}
+
+.active-tab::after {
+   content: '';
+   background: var(--color-medium-purple);
+   color: #F9F9F9;
+   width: 150%;
+   height: 120%;
+   border-bottom: var(--underline-yellow);
+   box-shadow: 0 0 .5rem rgba(255, 255, 255, 0.294);
+   z-index: -1;
+   position: absolute;
+   left: -15%;
+}
+
+.active-tab:hover::after {
+   background: var(--color-dark-purple);
+}
+
+a {
+   transform-origin: bottom;
+   border-bottom: 0px solid var(--underline-yellow);
+   position: relative;
+   transition: all .2s;
+}
+
+a::after {
+   content: '';
+   width: 100%;
+   height: 4px;
+   background: var(--text-color-pink);
+   position: absolute;
+   bottom: .4rem;
+   left: 15%;
+   z-index: -1;
+   opacity: 0;
+   transition: all .3s;
+}
+
+a:hover::after {
+   background: var(--text-color-yellow);
+   left: 0%;
+   opacity: 1;
+   bottom: .1rem;
+}
+
+.container {
+   margin: 0 10%;
+   height: 88vh;
+}
+
+ul {
+   list-style-type: none;
+}
+
+.hidden {
+   display: none;
+}
+
+.cursor {
+   font-weight: 700;
+   animation: blink 1.1s step-end infinite;
+   animation-fill-mode: backwards;
+}
+
+@keyframes blink {
+   0% {
+      opacity: 0;
+   }
+   65% {
+      opacity: 1;
+   }
+   to {
+      opacity: 0;
+   }
+}
+
+.wb-body {
+   background-color: var(--color-light-purple);
+   padding: 20px;
+}
+
+.Typewriter__cursor {
+   font-size: 2.4rem;
+   color: var(--text-color-yellow);
+}
+
+.Typewriter__wrapper {
+   font-size: 2.4rem;
+   color: var(--text-color-yellow);
+   margin-left: 1rem;
+   letter-spacing: -.1rem;
+   word-spacing: -.2rem;
+}
