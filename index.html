@@ -13,7 +13,9 @@
    <script src="https://unpkg.com/tippy.js@6"></script>
 
    <link rel="stylesheet" href="./style/style.css">
-   <title>ReNaq313</title>
+   <!-- media query should be last -->
+   <link rel="stylesheet" href="media-quries.css">
+   <title>Reza Naqvi</title>
 </head>
 <!-- TODO:// v1:current  v2: terminal feature integrated v3: cobalt theme integrated -->
 
@@ -26,10 +28,16 @@
             <li class="nav-item" id="contact">/Contact</li>
             <li class="nav-item" id="projects">/Projects</li>
             <li class="nav-item" id="terminal">/Terminal</li>
-            <li class="nav-item hover-background theme-tab">Change Theme</li>
+            <li class="nav-item hover-background theme-tab">Themes</li>
          </ul>
       </nav>
    </header>
+
+   <div class="themes-list hidden">
+      <p class="theme-name" id="classic-terminal">Classic Terminal</p>
+      <p class="theme-name" id="cobalt2">Cobalt2</p>
+      <p class="theme-name" id="one-dark-pro">One dark pro</p>
+   </div>
 
    <div class="container">
       <main>
@@ -38,8 +46,8 @@
          <h3>Find me online:</h3>
          <ul>
             <li><a href="https://github.com/ReNaq313" target="blank">Github</a></li>
-            <li><a href="https://www.twitter.com" target="_blank">Twitter</a></li>
-            <li><a href="https://www.instagram.com" target="_blank">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/mohammad-raza-599056246/" target="_blank">LinkedIn</a></li>
+            <li><a href="#" target="_blank">Instagram</a></li>
          </ul>
       </main>
    </div>
@@ -47,17 +55,14 @@
    <section class="hidden">
       <div class="about-content">
          <h2 class="secondary-heading">about-me:$<span class="cursor">&#10074;</span></h2>
-         <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis excepturi id incidunt illo?
-            Perspiciatis, voluptates ab sunt soluta ut sequi ipsam beatae praesentium vel quae consectetur dolor
-            consequatur dicta! Vero. </p>
+         <p> Hey there, I'm Raza, a code aficionado who's all about React-ing to challenges and crafting MERNful marvels! You'll often find me diving deep into the world of C++, engineering algorithms that are more efficient than a well-oiled machine. But hey, I'm not all bits and bytes. I've got a sense of humor that can turn even the most cryptic error messages into punchlines! So grab your favorite debugging tool, because with me, every project is an adventure through the loops of innovation and the arrays of creativity! Let's code and conquer together! </p>
       </div>
 
       <div class="contact-content">
          <h2 class="secondary-heading">contact-me:$<span class="cursor">&#10074;</span></h2>
-         <p> You can contact me at the email and phone number below: </p>
+         <p> You can contact me at the email mentioned below: </p>
          <ul>
             <li>Email:raza77191@gmail.com</li>
-            <li>Phone:+91 7498769871</li>
          </ul>
       </div>
    </section>

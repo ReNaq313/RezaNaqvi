@@ -1,4 +1,4 @@
-//terminal feature implementation
+/*terminal feature implementation */
 
 const terminalTab = document.querySelector("#terminal");
 const terminalSection = document.querySelector(".terminal-section");

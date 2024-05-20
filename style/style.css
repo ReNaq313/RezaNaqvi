@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
 * {
    margin: 0;
    padding: 0;
@@ -172,6 +173,39 @@ header {
    width: 120%;
 }
 
+/* themes list box */
+.themes-list {
+   background-color: var(--color-dark-purple);
+   position: absolute;
+   right: 30px;
+   top: 60px;
+   border-radius: 5px;
+}
+
+.theme-name{
+   padding: 10px;
+   transition: .17s all;
+}
+
+.theme-name:first-child{
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+}
+
+.theme-name:last-child{
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+}
+
+
+.theme-name:hover{
+   cursor: pointer;
+   background-color: var(--text-color-yellow);
+   color: var(--color-dark-purple);
+   font-weight: bold;
+}
+
+
 h1 {
    color: var(--text-color-green);
    font-size: 3.1rem;
@@ -295,9 +329,11 @@ ul {
    0% {
       opacity: 0;
    }
+
    65% {
       opacity: 1;
    }
+
    to {
       opacity: 0;
    }
@@ -319,4 +355,43 @@ ul {
    margin-left: 1rem;
    letter-spacing: -.1rem;
    word-spacing: -.2rem;
+}
+
+.classic-terminal {
+   --background-purple: teal;
+   --color-light-purple: #664E88;
+   --color-medium-purple: #400969;
+   --color-dark-purple: #310553;
+   --text-color-green: rgb(62, 204, 62);
+   --text-color-gray: #F3F1F5;
+   --text-color-yellow: #FFC947;
+   --text-color-pink: #FF449F;
+   --underline-yellow: 3px solid var(--text-color-yellow);
+   --underline-gray: 2px solid rgb(32, 32, 32);
+}
+
+.cobalt-theme {
+   --background-purple: teal;
+   --color-light-purple: #664E88;
+   --color-medium-purple: #400969;
+   --color-dark-purple: #310553;
+   --text-color-green: rgb(62, 204, 62);
+   --text-color-gray: #F3F1F5;
+   --text-color-yellow: #FFC947;
+   --text-color-pink: #FF449F;
+   --underline-yellow: 3px solid var(--text-color-yellow);
+   --underline-gray: 2px solid rgb(32, 32, 32);
+}
+
+.one-dark-pro {
+   --background-purple: teal;
+   --color-light-purple: #664E88;
+   --color-medium-purple: #400969;
+   --color-dark-purple: #310553;
+   --text-color-green: rgb(62, 204, 62);
+   --text-color-gray: #F3F1F5;
+   --text-color-yellow: #FFC947;
+   --text-color-pink: #FF449F;
+   --underline-yellow: 3px solid var(--text-color-yellow);
+   --underline-gray: 2px solid rgb(32, 32, 32);
 }

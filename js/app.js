@@ -1,4 +1,4 @@
-//add winbox for about,contact and projects
+/*add winbox for about,contact and projects */
 
 const about = document.querySelector("#about");
 const aboutContent = document.querySelector(".about-content");
@@ -9,14 +9,16 @@ const projectsContent = document.querySelector(".projects-content");
 const terminalTab = document.querySelector("#terminal");
 const themeTab = document.querySelector(".theme-tab");
 
+const isTerminalOpen = false;
+
 about.addEventListener("click", () => {
   new WinBox({
     title: "About Me",
     mount: aboutContent,
-    x: "900",
-    y: "210",
+    x: "50%",
+    y: "30%",
     width: "600px",
-    height: "380px",
+    height: "520px",
     top: 60,
     onfocus: function () {
       this.setBackground("#400969");
@@ -69,10 +71,20 @@ const typewriterArea = document.querySelector("#typewriter-area");
 
 const typewriter = new Typewriter(typewriterArea, {
   loop: false,
-  delay: 140,
+  delay: 110,
   autoStart: true,
   cursor: "█",
-  strings: ["Salam Alaykum! I'm Reza Naqvi"],
+  strings: [
+    "Hey! I'm Raza, passionate about crafting solutions with tech and engineering efficient algorithms.",
+    "Want to hear a programming joke?",
+    "Why did the programmer go broke?",
+    "Because he used up all his cache!",
+    "Still here?!",
+    "Want to hear more geeky jokes?",
+    "Well here you go",
+    "Why don't trees ever get lost?",
+    "Because they always know their root",
+  ],
 });
 
 typewriter
@@ -80,14 +92,14 @@ typewriter
   .pauseFor(370)
   .deleteAll(1)
   .pauseFor(12000)
-  .typeString("WOW! You still here")
+  .typeString("WOW! You're still here")
   .pauseFor(500)
   .deleteAll(1);
 
 about.addEventListener("click", () => {
   const typewriterAbout = new Typewriter(typewriterArea, {
     loop: false,
-    delay: 10,
+    delay: 30,
     autoStart: true,
     cursor: "█",
     strings: ["open about"],
@@ -100,7 +112,7 @@ about.addEventListener("click", () => {
 contact.addEventListener("click", () => {
   const typewriterContact = new Typewriter(typewriterArea, {
     loop: false,
-    delay: 10,
+    delay: 30,
     autoStart: true,
     cursor: "█",
     strings: ["open contact"],
@@ -113,7 +125,7 @@ contact.addEventListener("click", () => {
 projects.addEventListener("click", () => {
   const typewriterProjects = new Typewriter(typewriterArea, {
     loop: false,
-    delay: 10,
+    delay: 30,
     autoStart: true,
     cursor: "█",
     strings: ["open projects"],
@@ -126,7 +138,7 @@ projects.addEventListener("click", () => {
 terminalTab.addEventListener("click", () => {
   const typewriterTerminal = new Typewriter(typewriterArea, {
     loop: false,
-    delay: 10,
+    delay: 30,
     autoStart: true,
     cursor: "█",
     strings: ["open terminal"],
@@ -135,6 +147,15 @@ terminalTab.addEventListener("click", () => {
     typewriterTerminal.pauseFor(400).deleteAll(1);
   }, 250);
 });
+
+//Terminal commands functionality
+//TODO: implement this
+// if (isTerminalOpen) {
+//   const terminalWindow = document.querySelector(".terminal-section #terminal");
+//   const commandInput = document.createElement("input");
+//   commandInput.setAttribute("type", "text");
+//   terminalWindow.appendChild(commandInput);
+// }
 
 // switching active-tab class based on user click
 
@@ -166,7 +187,20 @@ navItems.forEach((navItem) => {
 // tooltip for change theme tab
 
 tippy(themeTab, {
-  content: "Change Theme",
+  content: "Apply Themes",
   followCursor: true,
   inertia: true,
+});
+
+//apply different themes
+const themesList = document.querySelector(".themes-list");
+const cobalt2 = document.querySelector("#cobalt2");
+const oneDarkPro = document.querySelector("#one-dark-pro");
+
+themeTab.addEventListener("click", () => {
+  themesList.classList.toggle("hidden");
+});
+
+cobalt2.addEventListener("click", () => {
+  document.body.classList.toggle("cobalt-theme");
 });
